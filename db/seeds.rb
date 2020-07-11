@@ -4,6 +4,7 @@ require_relative('../models/yoga_class.rb')
 require_relative('../models/yoga_session.rb')
 require('pry-byebug')
 
+Booking.delete_all()
 YogaSession.delete_all()
 Member.delete_all()
 YogaClass.delete_all()
@@ -89,6 +90,33 @@ session2 = YogaSession.new({
 
 session1.save()
 session2.save()
+
+booking1 = Booking.new({
+    'member_id' => member2.id,
+    'yoga_session_id' => session1.id
+})
+
+booking2 = Booking.new({
+    'member_id' => member2.id,
+    'yoga_session_id' => session2.id
+})
+
+booking3 = Booking.new({
+    'member_id' => member3.id,
+    'yoga_session_id' => session1.id
+})
+
+booking4 = Booking.new({
+    'member_id' => member4.id,
+    'yoga_session_id' => session1.id
+})
+
+booking1.save()
+booking2.save()
+booking3.save()
+booking4.save()
+
+booking3.delete()
 
 binding.pry
 nil
