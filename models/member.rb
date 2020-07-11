@@ -2,8 +2,8 @@ require_relative('../db/sql_runner')
 
 class Member
 
-    attr_reader :id, :start_membership
-    attr_accessor :title, :first_name, :last_name
+    attr_reader :id
+    attr_accessor :title, :first_name, :last_name, :start_membership
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
@@ -41,6 +41,13 @@ class Member
     def self.delete_all
         sql = "DELETE FROM members"
         SqlRunner.run(sql)
+    end
+
+    def update()
+        sql = "UPDATE members SET (title, first_name, last_name, start_membership) =
+        ($1, $2, $3, $4) WHERE id = $5"
+        values = [@title, @first_name, @last_name, @start_membership, @id]
+        SqlRunner.run(sql, values)
     end
 
 end
