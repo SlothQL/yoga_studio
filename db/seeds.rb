@@ -4,6 +4,7 @@ require_relative('../models/yoga_class.rb')
 require_relative('../models/yoga_session.rb')
 require('pry-byebug')
 
+YogaSession.delete_all()
 Member.delete_all()
 YogaClass.delete_all()
 
@@ -73,6 +74,21 @@ yoga3.save()
 
 yoga1.category = "Bikram Yoga"
 yoga1.update()
+
+session1 = YogaSession.new({
+    'yoga_class_id' => yoga1.id,
+    'wday' => "Wednesday",
+    'schedule' => "18:00"
+})
+
+session2 = YogaSession.new({
+    'yoga_class_id' => yoga1.id,
+    'wday' => "Friday",
+    'schedule' => "09:00"
+})
+
+session1.save()
+session2.save()
 
 binding.pry
 nil
