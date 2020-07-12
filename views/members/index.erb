@@ -14,7 +14,7 @@
         <td><a href="/members/<%= member.id%>"><%= member.full_name() %></a></td>
         <td></td>
         <td>
-            <form  action="/members/<%= member.id%>/edit" method="post">
+            <form  action="/members/<%= member.id%>/edit" method="get">
                 <input class="btn" type="submit" value="Edit">
             </form>
         </td>

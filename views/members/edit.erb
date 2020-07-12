@@ -1,0 +1,51 @@
+<h1>Edit <%= @member.full_name()%></h1>
+
+<form action="/members/<%= @member.id%>" method="post">
+    <div class="form">
+
+        <div class="form-element">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" id="first_name" value="<%= @member.first_name%>"/>
+        </div>
+
+        <div class="form-element">
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" id="last_name" value="<%= @member.last_name%>"/>
+        </div>
+
+        <div class="form-element">
+            <h4>Address:</h4>
+            <label for="street">Street:</label>
+            <input type="text" name="street" id="street" value="<%= @member.street%>"/>
+        </div>
+
+        <div class="form-element">
+            <label for="postcode">Postcode:</label>
+            <input type="text" name="postcode" id="postcode" value="<%= @member.postcode%>"/>
+        </div>
+
+        <div class="form-element">
+            <label for="city">City:</label>
+            <input type="text" name="city" id="city" value="<%= @member.city%>"/>
+        </div>
+
+        <div class="form-element">
+            <label for="country">Country:</label>
+            <input type="text" name="country" id="country" value="<%= @member.country%>"/>
+        </div>
+
+        <div class="form-element">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" value="<%= @member.email%>"/>
+        </div>
+
+        <div class="form-element">
+            <label for="phone">Phone:</label>
+            <input type="tel" name="phone" id="phone" value="<%= @member.phone%>"/>
+        </div>
+
+        <div class="form-element">
+            <input type="submit" value="Edit Member">
+        </div>
+    </div>
+</form>

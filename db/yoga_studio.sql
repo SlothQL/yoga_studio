@@ -14,7 +14,7 @@ CREATE TABLE members (
     country VARCHAR(255),
     email VARCHAR(255),
     phone VARCHAR(255),
-    start_membership VARCHAR(255) not null
+    start_membership VARCHAR(255)
 );
 
 CREATE TABLE yoga_classes (

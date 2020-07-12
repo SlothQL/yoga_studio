@@ -54,9 +54,9 @@ class Member
     end
 
     def update()
-        sql = "UPDATE members SET (first_name, last_name, street, postcode, city, country, email, phone, start_membership) =
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9) WHERE id = $10"
-        values = [@first_name, @last_name, @street, @postcode, @city, @country, @email, @phone, @start_membership, @id]
+        sql = "UPDATE members SET (first_name, last_name, street, postcode, city, country, email, phone) =
+        ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9"
+        values = [@first_name, @last_name, @street, @postcode, @city, @country, @email, @phone, @id]
         SqlRunner.run(sql, values)
     end
 

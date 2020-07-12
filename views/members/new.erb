@@ -46,7 +46,7 @@
 
         <div class="form-element">
             <label for="start_membership">Start of the Membership:</label>
-            <input type="date" name="start_membership" id="start_membership"/>
+            <input type="date" name="start_membership" id="start_membership" value="<%= Time.now().strftime("%Y-%m-%d")%>"/>
         </div>
 
         <div class="form-element">
