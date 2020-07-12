@@ -17,8 +17,7 @@ member1 = Member.new({
     'city' => 'Sweetwater',
     'country' => 'United States of America',
     'email' => 'wyatt@gmail.com',
-    'phone' => '075863465',
-    'start_membership' => '02.10.2016'
+    'phone' => '075863465'
 })
 
 member2 = Member.new({
@@ -29,8 +28,7 @@ member2 = Member.new({
     'city' => 'Los Angeles',
     'country' => 'United States of America',
     'email' => 'b.lowe@delos.com',
-    'phone' => '0710097630',
-    'start_membership' => '22.04.2018'
+    'phone' => '0710097630'
 })
 
 member3 = Member.new({
@@ -41,8 +39,7 @@ member3 = Member.new({
     'city' => 'Sweetwater',
     'country' => 'United States of America',
     'email' => 'maeve.m@yahoo.com',
-    'phone' => '072878445',
-    'start_membership' => '15.03.2020'
+    'phone' => '072878445'
 })
 
 member4 = Member.new({
@@ -52,9 +49,8 @@ member4 = Member.new({
     'postcode' => '73045',
     'city' => 'Sweetwater',
     'country' => 'United States of America',
-    'email' => 'wyatt@gmail.com',
-    'phone' => '073665896',
-    'start_membership' => '01.11.2019'
+    'email' => 't.flood@aol.com',
+    'phone' => '073665896'
 })
 
 member5 = Member.new({
@@ -65,8 +61,7 @@ member5 = Member.new({
     'city' => 'Los Angeles',
     'country' => 'United States of America',
     'email' => 'r.ford@delos.com',
-    'phone' => '079776813',
-    'start_membership' => '04.12.2016'
+    'phone' => '079776813'
 })
 
 member1.save()

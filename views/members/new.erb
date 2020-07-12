@@ -43,14 +43,11 @@
             <label for="phone">Phone:</label>
             <input type="tel" name="phone" id="phone"/>
         </div>
-
-        <div class="form-element">
-            <label for="start_membership">Start of the Membership:</label>
-            <input type="date" name="start_membership" id="start_membership" value="<%= Time.now().strftime("%Y-%m-%d")%>"/>
-        </div>
-
+        
         <div class="form-element">
             <input type="submit" value="Create new Member">
         </div>
+       
+
     </div>
 </form>
