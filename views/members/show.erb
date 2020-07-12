@@ -1,0 +1,36 @@
+<h1><%= @member.full_name() %></h1>
+
+<table>
+    <tr>
+        <td>Address:</td>
+        <td><%= @member.address()%></td>
+    </tr>
+    <tr>
+        <td>E-mail:</td>
+        <td><%= @member.email %></td>
+    </tr>
+    <tr>
+        <td>Phone number:</td>
+        <td><%= @member.phone %></td>
+    </tr>
+    <tr>
+        <td>Member since:</td>
+        <td><%= @member.start_membership %></td>
+    </tr>
+</table>
+
+<h3>Booked classes:</h3>
+<table>
+    <tr>
+        <td>
+        <% for s in @sessions %>
+         <p><%=s.wday%>, <%=s.schedule%></p>
+        <% end %>
+        </td>
+        <td>
+        <% for c in @classes %>
+            <p><%=c.title%></p>
+        <% end %>
+        </td>
+    </tr>
+</table>

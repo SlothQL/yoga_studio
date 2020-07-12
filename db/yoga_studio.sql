@@ -6,9 +6,14 @@ DROP TABLE IF EXISTS yoga_classes;
 
 CREATE TABLE members (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(255) not null,
     first_name VARCHAR(255) not null,
     last_name VARCHAR(255) not null,
+    street VARCHAR(255),
+    postcode VARCHAR(255),
+    city VARCHAR(255),
+    country VARCHAR(255),
+    email VARCHAR(255),
+    phone VARCHAR(255),
     start_membership VARCHAR(255) not null
 );
 

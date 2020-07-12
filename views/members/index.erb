@@ -1,0 +1,30 @@
+<h1>All members</h1>
+
+<table id="MemberTable">
+    <tr class="header">
+        <th>Member Number</th>
+        <th>Name</th>
+    </tr>
+
+    <% for member in @members %>
+    
+    <tr>
+        <td><%= member.id %></td>
+        <td></td>
+        <td><a href="/members/<%= member.id%>"><%= member.full_name() %></a></td>
+        <td></td>
+        <td>
+            <form  action="/members/<%= member.id%>/edit" method="post">
+                <input class="btn" type="submit" value="Edit">
+            </form>
+        </td>
+        <td>
+            <form  action="/members/<%= member.id%>/delete" method="post">
+                <input class="btn" type="submit" value="Delete">
+            </form>
+        </td>
+    </tr>
+
+    <% end %>
+
+</table>
