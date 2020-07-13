@@ -4,8 +4,8 @@
     <input class="btn" type="submit" value="Edit">
 </form>
 
-<form  action="/sessions/new" method="get">
-    <input class="btn" type="submit" value="Create new Session">
+<form  action="/sessions/<%= @yoga_session.id%>/delete" method="post">
+    <input class="btn" type="submit" value="Delete">
 </form>
 
 <table>

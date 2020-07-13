@@ -67,4 +67,11 @@ class YogaSession
         all_members = SqlRunner.run(sql, values)
         return all_members.map { |member| Member.new(member) }
     end
+
+    def delete()
+        sql = "DELETE FROM yoga_sessions WHERE id = $1"
+        values = [@id]
+        SqlRunner.run(sql, values)
+    end
+
 end

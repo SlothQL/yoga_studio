@@ -26,3 +26,9 @@ get '/sessions/:id/edit' do
     @yoga_session = YogaSession.find_by_id(params['id'].to_i)
     erb(:"yoga_sessions/edit")
 end
+
+post '/sessions/:id/delete' do
+    @session = YogaSession.find_by_id(params['id'].to_i)
+    @session.delete()
+    redirect to '/'
+end
