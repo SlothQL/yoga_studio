@@ -3,16 +3,18 @@
 <% weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
 <% timeslots = ["08:00", "09:00", "10:00", "11:00", "12:00", "15:00", "16:00", "17:00", "18:00", "19:00"]%>
 
-<form action="/sessions/<%=@updated_session.id%>" method="post">
+<% @yoga_session.yoga_class_id = @class_name.id%>
+
+<form action="/sessions/<%=@yoga_session.id%>" method="post">
     <div class="form">
         
-        
+
         <div class="form-element">
             <label for="wday">Day:</label>
             <select name="wday" id="wday">
             <% for weekday in weekdays%>
                 
-                <option value="wday" <%= "selected" if weekday == "#{@updated_session.wday}"%>><%= weekday %></option>
+                <option value="wday" <%= "selected" if weekday == "#{@yoga_session.wday}"%>><%= weekday %></option>
                 
             <% end %>
             </select>
@@ -23,7 +25,7 @@
             <select name="schedule" id="schedule">
             <% for timeslot in timeslots%>
                 
-                <option value="schedule" <%= "selected" if timeslot == "#{@updated_session.schedule}"%>><%= timeslot %></option>
+                <option value="schedule" <%= "selected" if timeslot == "#{@yoga_session.schedule}"%>><%= timeslot %></option>
                
             <% end %>
              </select>
@@ -32,9 +34,9 @@
          <div class="form-element">
             <label for="instructor">Instructor:</label>
             <select name="instructor" id="instructor">
-                <option value="Rachel" <%= "selected" if @updated_session.instructor == "Rachel"%>>Rachel</option>
-                <option value="Karen" <%= "selected" if @updated_session.instructor == "Karen"%>>Karen</option>
-                <option value="Manuel" <%= "selected" if @updated_session.instructor == "Manuel"%>>Manuel</option>
+                <option value="Rachel" <%= "selected" if @yoga_session.instructor == "Rachel"%>>Rachel</option>
+                <option value="Karen" <%= "selected" if @yoga_session.instructor == "Karen"%>>Karen</option>
+                <option value="Manuel" <%= "selected" if @yoga_session.instructor == "Manuel"%>>Manuel</option>
              </select>
         </div>
 
