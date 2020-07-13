@@ -58,5 +58,4 @@ class YogaSession
         new_class.save()
         @yoga_class_id = new_class.id
     end
-
 end

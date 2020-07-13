@@ -1,1 +1,31 @@
 <h1>Booking Manager</h1>
+
+<h3>Timetable</h3>
+<% weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+<% timeslots = ["08:00", "09:00", "10:00", "11:00", "12:00", "Break", "15:00", "16:00", "17:00", "18:00", "19:00"]%>
+
+<table>
+        <tr>
+        <th>Time</th>
+            <% for weekday in weekdays%>
+                <th><%= weekday%></th>
+            <% end%>
+        </tr>
+
+        
+    <% for time in timeslots%>
+        <tr>
+            <td><%= time %></td>
+            <% for weekday in weekdays%>
+                <td>
+                    <% for session in @all_sessions%>
+                        <% class_names = session.yoga_class()%>
+                            <% if session.wday == weekday && session.schedule == time%>
+                                <%= class_names.title %> 
+                            <% end %>
+                    <% end %>
+                </td>
+            <% end %>
+        </tr>
+    <% end %>
+</table>

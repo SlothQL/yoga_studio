@@ -105,8 +105,22 @@ session2 = YogaSession.new({
     'schedule' => "09:00"
 })
 
+session3 = YogaSession.new({
+    'yoga_class_id' => yoga2.id,
+    'wday' => "Thursday",
+    'schedule' => "15:00"
+})
+
+session4 = YogaSession.new({
+    'yoga_class_id' => yoga1.id,
+    'wday' => "Sunday",
+    'schedule' => "08:00"
+})
+
 session1.save()
 session2.save()
+session3.save()
+session4.save()
 
 booking1 = Booking.new({
     'member_id' => member2.id,
