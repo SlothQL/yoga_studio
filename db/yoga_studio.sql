@@ -33,6 +33,6 @@ CREATE TABLE yoga_sessions (
 
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
-    member_id INT REFERENCES members(id),
-    yoga_session_id INT REFERENCES yoga_sessions(id)
+    member_id INT REFERENCES members(id) ON DELETE CASCADE,
+    yoga_session_id INT REFERENCES yoga_sessions(id) ON DELETE CASCADE
 );

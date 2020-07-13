@@ -11,8 +11,8 @@ get '/sessions/new' do
 end
 
 post '/' do
-    new_session= YogaSession.new(params)
-    new_session.save()
+    @new_session= YogaSession.new(params)
+    @new_session.save()
     redirect to '/'
 end
 
@@ -25,13 +25,14 @@ end
 
 get '/sessions/:id/edit' do
     @updated_session = YogaSession.find_by_id(params['id'].to_i)
+    @class_name = YogaClass.find_by_id(params['id'].to_i)
     erb(:"yoga_sessions/edit")
 end
 
 post '/sessions/:id' do
     @updated_session = YogaSession.new(params)
     @updated_session.update()
-    redirect to '/classes'
+    redirect to '/'
 end
 
 post '/sessions/:id/delete' do

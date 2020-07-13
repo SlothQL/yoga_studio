@@ -115,7 +115,7 @@ session3 = YogaSession.new({
 }) 
 
 session4 = YogaSession.new({
-    'yoga_class_id' => yoga1.id,
+    'yoga_class_id' => yoga3.id,
     'wday' => "Sunday",
     'schedule' => "08:00",
     'instructor' => 'Manuel'
