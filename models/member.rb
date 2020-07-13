@@ -19,7 +19,7 @@ class Member
     end
 
     def save()
-        @start_membership = Time.now().strftime("%Y-%m-%d")
+        @start_membership = Time.now().strftime("%d/%m/%Y")
         sql = "INSERT INTO members (first_name, last_name, street, postcode, city, country, email, phone, start_membership)
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id"
         values = [@first_name, @last_name, @street, @postcode, @city, @country, @email, @phone, @start_membership]

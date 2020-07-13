@@ -1,0 +1,36 @@
+<h1>All classes</h1>
+
+<form  action="/classes/new" method="get">
+    <input class="btn" type="submit" value="Create New Class">
+</form>
+
+<table id="ClassesTable">
+    <tr class="header">
+        <th>Time and Date</th>
+        <th>Category</th>
+        <th>Title</th>
+        <th>Duration</th>
+    </tr>
+
+    <% for s in @yoga_sessions %>
+    <% class_details = s.yoga_class()%>
+    <tr>
+        <td><%= s.wday %>, <%= s.schedule %></td>
+        <td></td>
+        <td><%= class_details.category%></td>
+        <td></td>
+        <td><%= class_details.title%></td>
+        <td></td>
+        <td><%= class_details.duration%> minutes</td>
+        <td></td>
+        <td>
+            <form  action="/classes/<%= s.id%>/edit" method="get">
+                <input class="btn" type="submit" value="Edit">
+            </form>
+        </td>
+    </tr>
+
+    <% end %>
+
+</table>
+
