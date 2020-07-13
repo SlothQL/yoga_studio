@@ -3,19 +3,18 @@ require_relative('../db/sql_runner')
 class YogaClass
 
     attr_reader :id
-    attr_accessor :category, :title, :duration
+    attr_accessor :category, :title
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
         @category = options['category']
         @title = options['title']
-        @duration = options['duration']
     end
 
     def save()
-        sql = "INSERT INTO yoga_classes (category, title, duration)
-        VALUES ($1, $2, $3) RETURNING id"
-        values = [@category, @title, @duration]
+        sql = "INSERT INTO yoga_classes (category, title)
+        VALUES ($1, $2) RETURNING id"
+        values = [@category, @title]
         new_yoga_class = SqlRunner.run(sql, values).first
         @id = new_yoga_class['id'].to_i
     end
@@ -34,9 +33,9 @@ class YogaClass
     end
 
     def update()
-        sql = "UPDATE yoga_classes SET (category, title, duration) =
-        ($1, $2, $3) WHERE id = $4"
-        values = [@category, @title, @duration, @id]
+        sql = "UPDATE yoga_classes SET (category, title) =
+        ($1, $2) WHERE id = $3"
+        values = [@category, @title, @id]
         SqlRunner.run(sql, values)
     end
 

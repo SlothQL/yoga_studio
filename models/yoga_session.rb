@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('./yoga_class')
 
 class YogaSession
 
@@ -50,6 +51,12 @@ class YogaSession
         values = [@yoga_class_id]
         class_data = SqlRunner.run(sql, values).first
         return YogaClass.new(class_data)
+    end
+
+    def self.create_new_class(options)
+        new_class = YogaClass.new(options)
+        new_class.save()
+        @yoga_class_id = new_class.id
     end
 
 end

@@ -72,20 +72,17 @@ member5.save()
 
 yoga1 = YogaClass.new({
     'category' => 'Workout',
-    'title' => 'Hot Yoga for Beginners',
-    'duration' => 60
+    'title' => 'Hot Yoga for Beginners'
 })
 
 yoga2 = YogaClass.new({
     'category' => 'Yin Yoga',
-    'title' => 'Intro to Yin Yoga',
-    'duration' => 60
+    'title' => 'Intro to Yin Yoga'
 })
 
 yoga3 = YogaClass.new({
     'category' => 'Vinyasa Yoga',
-    'title' => 'Upperbody Strength',
-    'duration' => 30
+    'title' => 'Upperbody Strength'
 })
 
 

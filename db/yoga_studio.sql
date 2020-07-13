@@ -20,8 +20,7 @@ CREATE TABLE members (
 CREATE TABLE yoga_classes (
     id SERIAL PRIMARY KEY,
     category VARCHAR(255) not null,
-    title VARCHAR(255) not null,
-    duration INT not null
+    title VARCHAR(255) not null
 );
 
 CREATE TABLE yoga_sessions (
