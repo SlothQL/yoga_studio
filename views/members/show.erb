@@ -32,5 +32,10 @@
             <p><%=c.title%></p>
         <% end %>
         </td>
+        <td>
+        <% for s in @sessions %>
+            <p>with <%=s.instructor%></p>
+        <% end %>
+        </td>
     </tr>
 </table>

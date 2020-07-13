@@ -13,19 +13,20 @@
         </tr>
 
         
-    <% for time in timeslots%>
-        <tr>
-            <td><%= time %></td>
-            <% for weekday in weekdays%>
-                <td>
-                    <% for session in @all_sessions%>
-                        <% class_names = session.yoga_class()%>
-                            <% if session.wday == weekday && session.schedule == time%>
-                                <%= class_names.title %> 
-                            <% end %>
-                    <% end %>
-                </td>
-            <% end %>
-        </tr>
-    <% end %>
+<% for time in timeslots%>
+<tr>
+<td><%= time %></td>
+<% for weekday in weekdays%>
+<td>
+<% for session in @all_sessions %>
+<% class_names = session.yoga_class() %>
+<% if session.wday == weekday && session.schedule == time %>
+<p><a href="/sessions/<%= session.id%>"><%= class_names.title %></a></p>
+<p> with <%=session.instructor %></p>
+<% end %>
+<% end %>
+</td>
+<% end %>
+</tr>
+<% end %>
 </table>

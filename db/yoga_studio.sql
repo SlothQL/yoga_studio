@@ -27,7 +27,8 @@ CREATE TABLE yoga_sessions (
     id SERIAL PRIMARY KEY,
     yoga_class_id INT REFERENCES yoga_classes(id),
     wday VARCHAR(255) not null,
-    schedule VARCHAR(255) not null
+    schedule VARCHAR(255) not null,
+    instructor VARCHAR(255) not null
 );
 
 CREATE TABLE bookings (

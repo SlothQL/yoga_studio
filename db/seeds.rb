@@ -96,25 +96,29 @@ yoga1.update()
 session1 = YogaSession.new({
     'yoga_class_id' => yoga1.id,
     'wday' => "Wednesday",
-    'schedule' => "18:00"
+    'schedule' => "18:00",
+    'instructor' => "Rachel"
 })
 
 session2 = YogaSession.new({
     'yoga_class_id' => yoga1.id,
     'wday' => "Friday",
-    'schedule' => "09:00"
+    'schedule' => "09:00",
+    'instructor' => 'Manuel'
 })
 
 session3 = YogaSession.new({
     'yoga_class_id' => yoga2.id,
     'wday' => "Thursday",
-    'schedule' => "15:00"
-})
+    'schedule' => "15:00",
+    'instructor' => 'Karen'
+}) 
 
 session4 = YogaSession.new({
     'yoga_class_id' => yoga1.id,
     'wday' => "Sunday",
-    'schedule' => "08:00"
+    'schedule' => "08:00",
+    'instructor' => 'Manuel'
 })
 
 session1.save()

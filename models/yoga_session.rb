@@ -4,19 +4,20 @@ require_relative('./yoga_class')
 class YogaSession
 
     attr_reader :id
-    attr_accessor :yoga_class_id, :wday, :schedule
+    attr_accessor :yoga_class_id, :wday, :schedule, :instructor
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
         @yoga_class_id = options['yoga_class_id'].to_i
         @wday = options['wday']
         @schedule = options['schedule']
+        @instructor = options['instructor']
     end
 
     def save()
-        sql = "INSERT INTO yoga_sessions (yoga_class_id, wday, schedule)
-        VALUES ($1, $2, $3) RETURNING id"
-        values = [@yoga_class_id, @wday, @schedule]
+        sql = "INSERT INTO yoga_sessions (yoga_class_id, wday, schedule, instructor)
+        VALUES ($1, $2, $3, $4) RETURNING id"
+        values = [@yoga_class_id, @wday, @schedule, @instructor]
         new_session = SqlRunner.run(sql, values).first
         @id = new_session['id'].to_i
     end
@@ -35,9 +36,9 @@ class YogaSession
     end
 
     def update()
-        sql = "UPDATE yoga_sessions SET (yoga_class_id, wday, schedule) =
-        ($1, $2, $3) WHERE id = $4"
-        values = [@yoga_class_id, @wday, @schedule, @id]
+        sql = "UPDATE yoga_sessions SET (yoga_class_id, wday, schedule, instructor) =
+        ($1, $2, $3, $4) WHERE id = $5"
+        values = [@yoga_class_id, @wday, @schedule, @instructor, @id]
         SqlRunner.run(sql, values)
     end
 
