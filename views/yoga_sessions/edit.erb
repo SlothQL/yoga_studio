@@ -1,2 +1,36 @@
 <h1>Edit Yoga Session</h1>
 
+<% weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+<% timeslots = ["08:00", "09:00", "10:00", "11:00", "12:00", "15:00", "16:00", "17:00", "18:00", "19:00"]%>
+
+<form action="/sessions/<%=@updated_session.id%>" method="post">
+    <div class="form">
+
+        <div class="form-element">
+            <label for="wday">Day:</label>
+            <select name="wday" id="wday">
+            <% for weekday in weekdays%>
+                
+                <option value="wday" <%= "selected" if weekday == "#{@updated_session.wday}"%>><%= weekday %></option>
+                
+            <% end %>
+            </select>
+        </div>
+
+        <div class="form-element">
+            <label for="title">Time:</label>
+            <select name="schedule" id="schedule">
+            <% for timeslot in timeslots%>
+                
+                <option value="schedule" <%= "selected" if timeslot == "#{@updated_session.schedule}"%>><%= timeslot %></option>
+               
+            <% end %>
+             </select>
+        </div>
+
+         <div class="form-element">
+            <input type="submit" value="Edit Session">
+        </div>
+
+    </div>
+</form>

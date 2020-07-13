@@ -6,6 +6,7 @@ require_relative('../models/yoga_class.rb')
 also_reload('../models/*')
 
 get '/sessions/new' do
+    @all_classes = YogaClass.all()
     erb(:"yoga_sessions/new")
 end
 
@@ -23,8 +24,14 @@ get '/sessions/:id' do
 end
 
 get '/sessions/:id/edit' do
-    @yoga_session = YogaSession.find_by_id(params['id'].to_i)
+    @updated_session = YogaSession.find_by_id(params['id'].to_i)
     erb(:"yoga_sessions/edit")
+end
+
+post '/sessions/:id' do
+    @updated_session = YogaSession.new(params)
+    @updated_session.update()
+    redirect to '/classes'
 end
 
 post '/sessions/:id/delete' do
