@@ -1,6 +1,5 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require_relative('../models/yoga_session.rb')
 require_relative('../models/yoga_class.rb')
 also_reload('../models/*')
 

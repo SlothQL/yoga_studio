@@ -59,4 +59,12 @@ class YogaSession
         new_class.save()
         @yoga_class_id = new_class.id
     end
+
+    def members()
+        sql = "SELECT members.* FROM members
+        INNER JOIN bookings ON bookings.member_id = members.id WHERE bookings.yoga_session_id = $1"
+        values = [@id]
+        all_members = SqlRunner.run(sql, values)
+        return all_members.map { |member| Member.new(member) }
+    end
 end
