@@ -10,6 +10,11 @@ get '/sessions/new' do
     erb(:"yoga_sessions/new")
 end
 
+
+get '/sessions/new/time' do
+    erb(:"yoga_sessions/time")
+end
+
 post '/' do
     @new_session= YogaSession.new(params)
     @new_session.save()

@@ -1,25 +1,33 @@
 <h1>New Yoga Session</h1>
 
-<form action="/" method="post">
+<form action="/sessions/new/time" method="get">
     <div class="form">
 
         <div class="form-element">
             <label for="category">Category:</label>
             <select name="category" id="category">
-                <option>Bikram Yoga</option>
-                <option>Vinyasa Yoga</option>
-                <option>Yin Yoga</option>
+                <% for yoga_class in @all_classes%>
+                <option value="<%yoga_class.category%>" selected><%= yoga_class.category %></option>
+                <% end %>
             </select>
         </div>
 
         <div class="form-element">
             <label for="title">Title:</label>
-            <input type="text" name="title" id="title"/>
+            
+            <select name="title" id="title">
+            <% for yoga_class in @all_classes%>
+                
+                    <option> <%=yoga_class.title%></option>
+                
+            <% end %>
+            </select>
+            
         </div>
-
+        
          <div class="form-element">
-            <input type="submit" value="Create new Session">
+            <input type="submit" value=">> Next">
         </div>
-
+        
     </div>
 </form>

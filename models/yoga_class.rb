@@ -44,4 +44,11 @@ class YogaClass
         SqlRunner.run(sql)
     end
 
+    def self.find_by_category(category)
+        sql = "SELECT * FROM yoga_classes WHERE category = $1"
+        values = [category]
+        found_class = SqlRunner.run(sql, values).first
+        return YogaClass.new(found_class)
+    end
+
 end
