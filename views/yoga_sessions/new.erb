@@ -1,32 +1,55 @@
 <h1>New Yoga Session</h1>
 
-<form action="/sessions/new/time" method="get">
-    <div class="form">
+<% weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+<% timeslots = ["08:00", "09:00", "10:00", "11:00", "12:00", "15:00", "16:00", "17:00", "18:00", "19:00"]%>
 
-        <div class="form-element">
-            <label for="category">Category:</label>
-            <select name="category" id="category">
-                <% for yoga_class in @all_classes%>
-                <option value="<%yoga_class.category%>" selected><%= yoga_class.category %></option>
-                <% end %>
-            </select>
-        </div>
+<form action="/sessions/new" method="post">
+    <div class="form">
 
         <div class="form-element">
             <label for="title">Title:</label>
             
-            <select name="title" id="title">
-            <% for yoga_class in @all_classes%>
-                
-                    <option> <%=yoga_class.title%></option>
-                
-            <% end %>
+            <select name="yoga_class_id" id="yoga_class_id">
+                <%for yoga_class in @all_classes %>
+                    <option value="<%=yoga_class.id%>"><%=yoga_class.title%></option>
+                <% end %>
             </select>
             
         </div>
-        
+
+        <div class="form-element">
+            <label for="wday">Day:</label>
+            <select name="wday" id="wday">
+            <% for weekday in weekdays%>
+                
+                <option value="<%=weekday%>"><%= weekday %></option>
+                
+            <% end %>
+            </select>
+        </div>
+
+        <div class="form-element">
+            <label for="title">Time:</label>
+            <select name="schedule" id="schedule">
+            <% for timeslot in timeslots%>
+                
+                <option value="<%=timeslot%>"><%= timeslot %></option>
+               
+            <% end %>
+             </select>
+        </div>
+
          <div class="form-element">
-            <input type="submit" value=">> Next">
+            <label for="instructor">Instructor:</label>
+            <select name="instructor" id="instructor">
+                <option value="Rachel">Rachel</option>
+                <option value="Karen">Karen</option>
+                <option value="Manuel">Manuel</option>
+             </select>
+        </div>
+
+         <div class="form-element">
+            <input type="submit" value="Create Session">
         </div>
         
     </div>
