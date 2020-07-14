@@ -14,6 +14,13 @@ class YogaSession
         @instructor = options['instructor']
     end
 
+    def yoga_class()
+        sql = "SELECT * FROM yoga_classes WHERE id = $1"
+        values = [@yoga_class_id]
+        class_data = SqlRunner.run(sql, values).first
+        return YogaClass.new(class_data)
+    end
+
     def save()
         sql = "INSERT INTO yoga_sessions (yoga_class_id, wday, schedule, instructor)
         VALUES ($1, $2, $3, $4) RETURNING id"
@@ -47,12 +54,6 @@ class YogaSession
         SqlRunner.run(sql)
     end
 
-    def yoga_class()
-        sql = "SELECT * FROM yoga_classes WHERE id = $1"
-        values = [@yoga_class_id]
-        class_data = SqlRunner.run(sql, values).first
-        return YogaClass.new(class_data)
-    end
 
     def self.create_new_class(options)
         new_class = YogaClass.new(options)

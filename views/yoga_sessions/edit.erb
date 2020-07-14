@@ -1,11 +1,13 @@
-<h1>Edit <%= @class_name.title %></h1>
+<h1>Edit <%= @yoga_class.title%></h1>
+
+
 
 <% weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
 <% timeslots = ["08:00", "09:00", "10:00", "11:00", "12:00", "15:00", "16:00", "17:00", "18:00", "19:00"]%>
 
-<% @yoga_session.yoga_class_id = @class_name.id%>
-
 <form action="/sessions/<%=@yoga_session.id%>" method="post">
+   
+   <input type="hidden" value="<%=@yoga_class.id%>" name="yoga_class_id" id="yoga_class_id"/>
     <div class="form">
         
 
@@ -14,7 +16,7 @@
             <select name="wday" id="wday">
             <% for weekday in weekdays%>
                 
-                <option value="wday" <%= "selected" if weekday == "#{@yoga_session.wday}"%>><%= weekday %></option>
+                <option value="<%=weekday%>" <%= "selected" if weekday == "#{@yoga_session.wday}"%>><%= weekday %></option>
                 
             <% end %>
             </select>
@@ -25,7 +27,7 @@
             <select name="schedule" id="schedule">
             <% for timeslot in timeslots%>
                 
-                <option value="schedule" <%= "selected" if timeslot == "#{@yoga_session.schedule}"%>><%= timeslot %></option>
+                <option value="<%=timeslot%>" <%= "selected" if timeslot == "#{@yoga_session.schedule}"%>><%= timeslot %></option>
                
             <% end %>
              </select>

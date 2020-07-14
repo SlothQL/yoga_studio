@@ -25,13 +25,13 @@ end
 
 get '/sessions/:id/edit' do
     @yoga_session = YogaSession.find_by_id(params['id'].to_i)
-    @class_name = @yoga_session.yoga_class()
+    @yoga_class = @yoga_session.yoga_class()
     erb(:"yoga_sessions/edit")
 end
 
 post '/sessions/:id' do
-    @updated_session = YogaSession.new(params)
-    @updated_session.update()
+    updated_session = YogaSession.new(params)
+    updated_session.update()
     redirect to '/'
 end
 
