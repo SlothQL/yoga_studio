@@ -29,9 +29,13 @@
 <h3>Members booked on this Yoga Session:</h3>
 
 <table>
+    <% if @members != [] %>
         <% for member in @members %>
-        <tr>
-        <td><a href="/members/<%= member.id%>"><%=member.full_name()%></a></td>
-        </tr>
+            <tr>
+            <td><a href="/members/<%= member.id%>"><%=member.full_name()%></a></td>
+            </tr>
         <% end %>
+    <% else%>
+        <p>There is no member booked on this Yoga Session yet</p>
+    <% end%>
 </table>
