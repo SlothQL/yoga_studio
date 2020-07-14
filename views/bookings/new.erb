@@ -1,0 +1,30 @@
+<h1>New Booking</h1>
+
+<form action="/bookings/new" method="post">
+    <div class="form">
+
+        <div class="form-element">
+            <label for="yoga_session">For which class:</label>
+            <select name="yoga_session_id" id="yoga_session_id">
+                <%for s in @all_sessions %>
+                    <% class_name = s.yoga_class()%>
+                    <option value="<%=s.id%>"><%=s.wday%>, <%=s.schedule%>: <%=class_name.title%></option>
+                <% end %>
+            </select>
+        </div>
+
+        <div class="form-element">
+            <label for="member">Which member:</label>
+            <select name="member_id" id="member_id">
+                <%for member in @all_members %>
+                    <option value="<%=member.id%>">#<%=member.id%>, <%=member.full_name()%></option>
+                <% end %>
+            </select>
+        </div>
+
+        <div class="form-element">
+            <input type="submit" value="Book class">
+        </div>
+
+    </div>
+</form>
