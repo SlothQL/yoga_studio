@@ -1,3 +1,7 @@
+body {
+    font-family: 'Muli', sans-serif;
+}
+
 .menu {
     height: 100%;
     width: 180px;
@@ -5,7 +9,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: green;
+    background-color: rgb(7, 110, 12);
     overflow-x: hidden;
     padding-top: 60px;
 }
@@ -17,13 +21,14 @@
 .menu a {
     padding: 8px 8px 8px 0px;
     text-decoration: none;
-    font-size: 19px;
+    font-size: 18px;
     color: white;
     display: block;
+    font-weight: bold;
 }
 
 .menu a:hover {
-    font-size: 22px;
+    font-size: 21px;
 }
 
 #content {
@@ -31,7 +36,7 @@
     padding-left: 200px;
 }
 
-#time-table-a {
-    color: darkgreen;
-    text-decoration: none;
+.tt-element {
+    border: 1px solid black;
 }
+

@@ -8,25 +8,25 @@
 <% weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
 <% timeslots = ["08:00", "09:00", "10:00", "11:00", "12:00", "Break", "15:00", "16:00", "17:00", "18:00", "19:00"]%>
 
-<table>
-        <tr>
-        <th>Time</th>
+<table id="timetable">
+        <tr class="tt-wrap">
+        <th class="tt-element"></th>
             <% for weekday in weekdays%>
-                <th><%= weekday%></th>
+                <th class="tt-element"><%= weekday%></th>
             <% end%>
         </tr>
 
         
 <% for time in timeslots%>
-<tr>
-<td><%= time %></td>
+<tr class="tt-wrap">
+<td class="tt-element"><%= time %></td>
 <% for weekday in weekdays%>
-<td>
+<td class="tt-element">
 <% for session in @all_sessions %>
 <% class_names = session.yoga_class() %>
 <% if session.wday == weekday && session.schedule == time %>
-<p><a id="time-table-a" href="/sessions/<%= session.id%>"><%= class_names.title %></a></p>
-<p> with <%=session.instructor %></p>
+<p><a id="timetable-a" class="bold" href="/sessions/<%= session.id%>"><%= class_names.title %></a></p>
+<p class="instructor"> with <%=session.instructor %></p>
 <% end %>
 <% end %>
 </td>

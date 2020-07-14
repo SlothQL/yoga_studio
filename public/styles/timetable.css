@@ -1,0 +1,27 @@
+#timetable-a {
+    color: darkgreen;
+    text-decoration: none;
+}
+
+#timetable {
+    border-collapse: collapse;
+    border: 2px solid black;
+    margin-top: 20px;
+    align-items: center;
+    table-layout: fixed;
+    width: 80%;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.tt-element {
+    padding-left: 5px;
+    width: 10%;
+    display: table-cell;
+}
+
+th, td {
+    font-size: 15px;
+}
