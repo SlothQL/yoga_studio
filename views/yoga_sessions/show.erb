@@ -1,26 +1,28 @@
 <h1><%= @yoga_class.title%></h1>
 
-<form  action="/sessions/<%= @yoga_session.id%>/edit" method="get">
-    <input class="btn" type="submit" value="Edit">
-</form>
+<div>
+    <form class="inline-block" action="/sessions/<%= @yoga_session.id%>/edit" method="get">
+        <input class="btn" type="submit" value="Edit">
+    </form>
 
-<form  action="/sessions/<%= @yoga_session.id%>/delete" method="post">
-    <input class="btn" type="submit" value="Delete">
-</form>
+    <form class="inline-block" action="/sessions/<%= @yoga_session.id%>/delete" method="post">
+        <input class="btn" type="submit" value="Delete">
+    </form>
+</div>
 
-<table>
+<table class="table">
     <tr>
-        <td>Day:</td>
+        <td class="bold">Day:</td>
         <td><%= @yoga_session.wday%></td>
     </tr>
 
     <tr>
-        <td>Time:</td>
+        <td class="bold">Time:</td>
         <td><%= @yoga_session.schedule%></td>
     </tr>
 
     <tr>
-        <td>Instructor:</td>
+        <td class="bold">Instructor:</td>
         <td><%= @yoga_session.instructor%></td>
     </tr>
 

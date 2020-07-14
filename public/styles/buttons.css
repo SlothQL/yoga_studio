@@ -3,9 +3,14 @@
     color: white;
     border: none;
     border-radius: 5%;
-    padding: 10px 15px;
+    padding: 8px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 15px;
+    font-size: 13px;
+    margin: 10px 10px 10px 0px;
+}
+
+.inline-block {
+    display: inline-block;
 }
