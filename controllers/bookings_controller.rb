@@ -13,10 +13,10 @@ get '/bookings' do
 end
 
 post '/bookings/new' do
-    all_bookings = Booking.all()
-    b = all_bookings.find { |booking| booking.member_id == params["member_id"].to_i && booking.yoga_session_id == params["yoga_session_id"].to_i}
-    if b
-        redirect to "/sessions/#{params['yoga_session_id']}"
+    @all_bookings = Booking.all()
+    @b = @all_bookings.find { |booking| booking.member_id == params["member_id"].to_i && booking.yoga_session_id == params["yoga_session_id"].to_i}
+    if @b
+        erb(:"bookings/exist")
     else 
         new_booking= Booking.new(params)
         new_booking.save()
