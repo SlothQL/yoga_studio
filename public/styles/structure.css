@@ -1,5 +1,10 @@
 body {
     font-family: 'Muli', sans-serif;
+    background-image: url('/images/chakras.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-attachment: fixed;
+    background-size: 6cm;
 }
 
 h1 {
@@ -18,12 +23,12 @@ h3 {
 
 .menu {
     height: 100%;
-    width: 180px;
+    width: 190px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(7, 110, 12);
+    background-color: rgb(96, 189, 101);
     overflow-x: hidden;
     padding-top: 60px;
 }
@@ -36,7 +41,7 @@ h3 {
     padding: 8px 8px 8px 0px;
     text-decoration: none;
     font-size: 18px;
-    color: white;
+    color: black;
     display: block;
     font-weight: bold;
 }

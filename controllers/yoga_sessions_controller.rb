@@ -11,9 +11,15 @@ get '/sessions/new' do
 end
 
 post '/sessions/new' do
-    new_session= YogaSession.new(params)
-    new_session.save()
-    redirect to '/'
+    all_sessions = YogaSession.all()
+    s = all_sessions.find { |session| session.yoga_class_id == params["yoga_class_id"].to_i  && session.schedule == params["schedule"] && session.instructor == params["instructor"]}
+    if s
+        redirect to '/'
+    else 
+        new_session= YogaSession.new(params)
+        new_session.save()
+        redirect to '/'
+    end
 end
 
 post '/' do
