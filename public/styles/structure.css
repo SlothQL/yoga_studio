@@ -1,0 +1,37 @@
+.menu {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: green;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+.menu li {
+    list-style-type: none;
+}
+
+.menu a {
+    padding: 8px 8px 8px 0px;
+    text-decoration: none;
+    font-size: 19px;
+    color: white;
+    display: block;
+}
+
+.menu a:hover {
+    font-size: 22px;
+}
+
+#content {
+    transition: margin-left .5s;
+    padding-left: 200px;
+}
+
+#time-table-a {
+    color: darkgreen;
+    text-decoration: none;
+}

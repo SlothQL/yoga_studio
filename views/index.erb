@@ -25,7 +25,7 @@
 <% for session in @all_sessions %>
 <% class_names = session.yoga_class() %>
 <% if session.wday == weekday && session.schedule == time %>
-<p><a href="/sessions/<%= session.id%>"><%= class_names.title %></a></p>
+<p><a id="time-table-a" href="/sessions/<%= session.id%>"><%= class_names.title %></a></p>
 <p> with <%=session.instructor %></p>
 <% end %>
 <% end %>
