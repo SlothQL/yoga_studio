@@ -3,7 +3,7 @@ body {
     background-image: url('/images/Anahata-Heart-chopped.jpeg');
     background-repeat: no-repeat;
     background-position: top right;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-size: 11cm;
 }
 
