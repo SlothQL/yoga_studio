@@ -37,11 +37,11 @@
             <tr>
             <td><a href="/members/<%= member.id%>"><%=member.full_name()%></a></td>
             <td></td>
-    <td>
+            <td>
             <form  action="/bookings/<%= member.id%>/delete" method="post">
                 <input class="btn" type="submit" value="Remove from Session">
             </form>
-        </td>
+            </td>
             </tr>
         <% end %>
     <% else%>
