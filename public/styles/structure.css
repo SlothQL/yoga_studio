@@ -1,10 +1,10 @@
 body {
     font-family: 'Muli', sans-serif;
-    background-image: url('/images/Anahata-Heart-chopped.jpeg');
+    background-image: url('/images/heart-chakra.jpeg');
     background-repeat: no-repeat;
     background-position: top right;
     background-attachment: scroll;
-    background-size: 11cm;
+    background-size: 10cm;
 }
 
 h1 {
@@ -28,7 +28,7 @@ h3 {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(156, 233, 136);
+    background-color: rgb(142, 230, 164);
     overflow-x: hidden;
     padding-top: 60px;
 }
