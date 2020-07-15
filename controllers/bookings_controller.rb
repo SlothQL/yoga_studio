@@ -23,3 +23,9 @@ post '/bookings/new' do
         redirect to "/sessions/#{params['yoga_session_id']}"
     end
 end
+
+post '/bookings/:id/delete' do
+    @booking = Booking.find_by_id(params['id'].to_i)
+    @booking.delete()
+    redirect to "/sessions/#{params['yoga_session_id']}"
+end
