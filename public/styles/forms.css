@@ -21,3 +21,9 @@ th {
 #footnote {
     font-size: 13px;
 }
+
+#link {
+    color: darkgreen;
+    text-decoration: none;
+    font-weight: bold;
+}

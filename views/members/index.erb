@@ -11,7 +11,7 @@
     <tr class="wrap">
         <td class="element"><%= member.id %></td>
         <td></td>
-        <td class="element"><a href="/members/<%= member.id%>"><%= member.full_name() %></a></td>
+        <td class="element"><a id="link" href="/members/<%= member.id%>"><%= member.full_name() %></a></td>
         <td></td>
         <td class="element">
             <form  action="/members/<%= member.id%>/edit" method="get">
