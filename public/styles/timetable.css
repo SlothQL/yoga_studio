@@ -9,7 +9,7 @@
     margin-top: 20px;
     align-items: center;
     table-layout: fixed;
-    width: 70%;
+    width: 75%;
     text-align: center;
     background-color: white;
 }
@@ -19,7 +19,7 @@
 }
 
 .tt-element {
-    width: 8%;
+    width: 8.5%;
     display: table-cell;
     text-align: center;
 }
