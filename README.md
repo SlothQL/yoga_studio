@@ -28,3 +28,6 @@ A local gym has asked you to build a piece of software to help them to manage me
 * Classes could have a maximum capacity, and users can only be added while there is space remaining.
 * The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours.
 * The Gym could mark members and classes as active/deactivated. Deactivated members/classes will not appear when creating bookings.
+
+#### Technologies I used:
+* 
