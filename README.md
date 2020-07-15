@@ -30,4 +30,6 @@ A local gym has asked you to build a piece of software to help them to manage me
 * The Gym could mark members and classes as active/deactivated. Deactivated members/classes will not appear when creating bookings.
 
 #### Technologies I used:
-* 
+* Ruby
+* Sinatra
+* SQL
