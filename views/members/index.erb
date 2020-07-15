@@ -1,24 +1,24 @@
 <h1>All members</h1>
 
-<table id="MemberTable" class="table">
-    <tr class="header">
-        <th>Member Number</th>
-        <th>Name</th>
+<table class="table">
+    <tr class="wrap">
+        <th class="element">Member Number</th>
+        <th class="element" colspan="3">Name</th>
     </tr>
 
     <% for member in @members %>
     
-    <tr>
-        <td><%= member.id %></td>
+    <tr class="wrap">
+        <td class="element"><%= member.id %></td>
         <td></td>
-        <td><a href="/members/<%= member.id%>"><%= member.full_name() %></a></td>
+        <td class="element"><a href="/members/<%= member.id%>"><%= member.full_name() %></a></td>
         <td></td>
-        <td>
+        <td class="element">
             <form  action="/members/<%= member.id%>/edit" method="get">
                 <input class="btn" type="submit" value="Edit">
             </form>
         </td>
-        <td>
+        <td class="element">
             <form  action="/members/<%= member.id%>/delete" method="post">
                 <input class="btn" type="submit" value="Delete">
             </form>

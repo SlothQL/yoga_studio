@@ -1,3 +1,23 @@
 .table {
-    border: 1px solid black;
+    border: 2px solid black;
+    margin-top: 20px;
+    align-items: center;
+    table-layout: fixed;
+    text-align: left;
+    padding-left: 5px;
+    width: auto;
+}
+
+.element {
+    display: table-cell;
+    
+}
+
+th {
+    padding: 0px 20px 10px 0px;
+    
+}
+
+#footnote {
+    font-size: 13px;
 }
