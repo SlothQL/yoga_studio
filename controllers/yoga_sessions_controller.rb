@@ -13,8 +13,17 @@ end
 
 post '/sessions' do
     all_sessions = YogaSession.all()
-    s = all_sessions.find { |session| session.yoga_class_id == params["yoga_class_id"].to_i  && session.schedule == params["schedule"] && session.instructor == params["instructor"] && session.wday == params["wday"]}
-    i = all_sessions.find { |session| session.schedule == params["schedule"] && session.instructor == params["instructor"] && session.wday == params["wday"]}
+    s = all_sessions.find do |session| 
+        session.yoga_class_id == params["yoga_class_id"].to_i  && 
+        session.schedule == params["schedule"] && 
+        session.instructor == params["instructor"] && 
+        session.wday == params["wday"]
+    end
+    i = all_sessions.find do |session| 
+        session.schedule == params["schedule"] && 
+        session.instructor == params["instructor"] && 
+        session.wday == params["wday"]
+    end
     if s
         erb(:"yoga_sessions/exist")
     elsif i

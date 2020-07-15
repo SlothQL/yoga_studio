@@ -14,7 +14,10 @@ end
 
 post '/bookings/new' do
     @all_bookings = Booking.all()
-    @b = @all_bookings.find { |booking| booking.member_id == params["member_id"].to_i && booking.yoga_session_id == params["yoga_session_id"].to_i}
+    @b = @all_bookings.find do |booking| 
+        booking.member_id == params["member_id"].to_i && 
+        booking.yoga_session_id == params["yoga_session_id"].to_i
+    end
     if @b
         erb(:"bookings/exist")
     else 
