@@ -12,9 +12,12 @@ end
 
 post '/sessions/new' do
     all_sessions = YogaSession.all()
-    s = all_sessions.find { |session| session.yoga_class_id == params["yoga_class_id"].to_i  && session.schedule == params["schedule"] && session.instructor == params["instructor"]}
+    s = all_sessions.find { |session| session.yoga_class_id == params["yoga_class_id"].to_i  && session.schedule == params["schedule"] && session.instructor == params["instructor"] && session.wday == params["wday"]}
+    i = all_sessions.find { |session| session.schedule == params["schedule"] && session.instructor == params["instructor"] && session.wday == params["wday"]}
     if s
         erb(:"yoga_sessions/exist")
+    elsif i
+        erb(:"yoga_sessions/busy")
     else 
         new_session= YogaSession.new(params)
         new_session.save()
