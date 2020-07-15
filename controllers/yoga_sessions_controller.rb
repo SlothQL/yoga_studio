@@ -11,7 +11,7 @@ get '/sessions/new' do
     erb(:"yoga_sessions/new")
 end
 
-post '/sessions/new' do
+post '/sessions' do
     all_sessions = YogaSession.all()
     s = all_sessions.find { |session| session.yoga_class_id == params["yoga_class_id"].to_i  && session.schedule == params["schedule"] && session.instructor == params["instructor"] && session.wday == params["wday"]}
     i = all_sessions.find { |session| session.schedule == params["schedule"] && session.instructor == params["instructor"] && session.wday == params["wday"]}
@@ -24,12 +24,6 @@ post '/sessions/new' do
         new_session.save()
         redirect to '/'
     end
-end
-
-post '/' do
-    @new_session= YogaSession.new(params)
-    @new_session.save()
-    redirect to '/'
 end
 
 get '/sessions/:id' do
