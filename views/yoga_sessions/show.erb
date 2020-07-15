@@ -35,10 +35,11 @@
     <% if @members != [] %>
         <% for member in @members %>
             <tr>
+            <% @b = @all_bookings.find { |booking| booking.member_id == member.id && booking.yoga_session_id == @yoga_session.id}%>
             <td><a href="/members/<%= member.id%>"><%=member.full_name()%></a></td>
             <td></td>
             <td>
-            <form  action="/bookings/<%= member.id%>/delete" method="post">
+            <form  action="/bookings/<%= @b.id %>/delete" method="post">
                 <input class="btn" type="submit" value="Remove from Session">
             </form>
             </td>
