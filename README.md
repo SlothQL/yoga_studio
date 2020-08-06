@@ -42,4 +42,4 @@ The homepage shows a dynamic timetable once open:
 
 The menu on the left allows the user to visit other sites and use more functionalities such as viewing all yoga classes.
 
-![](images/all_classes-6731411.png)
+![](images/all_classes.png)
