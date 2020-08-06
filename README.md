@@ -36,10 +36,10 @@ A local gym has asked you to build a piece of software to help them to manage me
 
 The homepage shows a dynamic timetable once open:
 
-![](images/homepage1.png)
+![](images/timetable1.png)
 
-![](images/homepage2.png)
+![](images/timetable2.png)
 
 The menu on the right allows the user to visit other sites and use more functionalities such as viewing all yoga classes.
 
-![](images/all_classes.png)
+![](images/all_classes-6731411.png)
