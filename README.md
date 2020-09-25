@@ -1,4 +1,4 @@
-# yoga_studio
+# yoga_studio :lotus_position_woman:
 CodeClan Ruby Project
 
 
