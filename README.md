@@ -2,7 +2,7 @@
 CodeClan Ruby Project
 
 
-### How to run the application:
+### How to run the application
 
 * Open your terminal and type `drobdb yoga_studio` to drop any Database you might have with the name yoga_studio
 * Create a new Database called yoga_studio `createdb yoga_studio`
@@ -14,22 +14,24 @@ CodeClan Ruby Project
 
 ### The brief 
 
-#### Gym
 A local gym has asked you to build a piece of software to help them to manage memberships, and register members for classes.
 
-#### MVP
+The user should be able to:
+
 * The app should allow the gym to create and edit Members
 * The app should allow the gym to create and edit Classes
 * The app should allow the gym to book members on specific classes
 * The app should show a list of all upcoming classes
 * The app should show all members that are booked in for a particular class
 
-#### Possible Extensions
+### Extensions
+
 * Classes could have a maximum capacity, and users can only be added while there is space remaining.
 * The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours.
 * The Gym could mark members and classes as active/deactivated. Deactivated members/classes will not appear when creating bookings.
 
-### Technologies I used:
+### Technologies used
+
 * Ruby
 * Sinatra
 * SQL
