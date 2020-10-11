@@ -36,7 +36,11 @@ The user should be able to:
 * Sinatra
 * SQL
 
-The homepage shows a dynamic timetable once open:
+### Reflection
+
+I created a dynamic timetable that displays all sessions and automatically adds a new session into the correct slot. However, one of the constraints was not to use any Ruby frameworks or libraries other than Sinatra. My solution was a nested for loop so that each cell contains the information about their specific day and time. Each cell then makes a request to the database to see if a session with this specific time slot exists and if so displays the data. Even though I am really proud of this functionality, I have to say that the more entries the database has the more it affects the application’s performance.
+
+The homepage shows the dynamic timetable once open:
 
 ![](images/timetable1.png)
 
